@@ -1,27 +1,55 @@
 import { useState, useEffect, useRef } from "react";
-import { SendHorizonal, Bot, User } from "lucide-react";
+import { SendHorizonal, Bot, User, Loader2 } from "lucide-react";
+import { api } from "../../services/api";
 
 const Chat = () => {
   const [messages, setMessages] = useState([
     { sender: "bot", text: "Привет! Я твой AI-ассистент. Чем могу помочь?" },
   ]);
   const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const handleSend = async () => {
-    if (!input.trim()) return;
+  // Генерация или получение user_id
+  const userId = useRef(localStorage.getItem('user_id') || `user_${Date.now()}`);
 
-    const newMessage = { sender: "user", text: input };
+  useEffect(() => {
+    localStorage.setItem('user_id', userId.current);
+  }, []);
+
+  const handleSend = async () => {
+    if (!input.trim() || isLoading) return;
+
+    const userMessage = input.trim();
+    const newMessage = { sender: "user", text: userMessage };
     setMessages((prev) => [...prev, newMessage]);
     setInput("");
+    setIsLoading(true);
 
-    // Эмуляция ответа AI
-    setTimeout(() => {
+    try {
+      // Реальный запрос к Backend API
+      const response = await api.chat.sendMessage({
+        user_id: userId.current,
+        message: userMessage,
+        language: 'ru',
+      });
+
       setMessages((prev) => [
         ...prev,
-        { sender: "bot", text: `Ты сказал: "${input}". Интересно! 😊` },
+        { sender: "bot", text: response.response },
       ]);
-    }, 800);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setMessages((prev) => [
+        ...prev,
+        {
+          sender: "bot",
+          text: "Извините, произошла ошибка. Убедитесь, что backend сервер запущен на http://localhost:8000"
+        },
+      ]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   // Автопрокрутка вниз при новых сообщениях
@@ -70,15 +98,17 @@ const Chat = () => {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && handleSend()}
+          onKeyDown={(e) => e.key === "Enter" && !isLoading && handleSend()}
           placeholder="Введите сообщение..."
-          className="flex-1 p-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-blue-400"
+          disabled={isLoading}
+          className="flex-1 p-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-gray-100"
         />
         <button
           onClick={handleSend}
-          className="p-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition"
+          disabled={isLoading}
+          className="p-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
         >
-          <SendHorizonal size={18} />
+          {isLoading ? <Loader2 size={18} className="animate-spin" /> : <SendHorizonal size={18} />}
         </button>
       </footer>
     </div>

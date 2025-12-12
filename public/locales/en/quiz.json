@@ -1,0 +1,87 @@
+{
+  "pageTitle": "Choose a topic for the quiz",
+  "pageSubtitle": "AI will create a unique test for you on the selected topic",
+  "createCustomQuiz": "Create your own quiz with AI",
+  "myStats": "My Statistics",
+  "searchPlaceholder": "Search topics...",
+  "difficulty": {
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard"
+  },
+  "materialsLoaded": "materials loaded",
+  "noTopicsFound": "No topics found",
+  "loadMaterials": "Upload materials via backend API",
+  "createDialog": {
+    "title": "Create your own quiz with AI",
+    "topicLabel": "Quiz topic",
+    "topicPlaceholder": "For example: Python basics, Math grade 10...",
+    "topicHint": "AI will create questions based on uploaded materials on this topic",
+    "questionsCount": "Number of questions",
+    "difficultyLabel": "Difficulty",
+    "generating": "AI is generating quiz...",
+    "generatingHint": "This may take a few seconds",
+    "cancel": "Cancel",
+    "create": "Create quiz",
+    "creating": "Generating..."
+  },
+  "quiz": {
+    "backToQuizzes": "Back to quizzes",
+    "question": "Question",
+    "of": "/",
+    "answer": "Answer",
+    "next": "Next",
+    "finish": "Finish",
+    "correct": "Correct!",
+    "incorrect": "Incorrect",
+    "confirmLeave": "The quiz will remain incomplete. Are you sure you want to leave?"
+  },
+  "results": {
+    "completed": "Quiz completed!",
+    "score": "Correct answers",
+    "scoreMessages": {
+      "excellent": "Excellent! 🌟",
+      "great": "Great! 👏",
+      "good": "Good! 👍",
+      "notBad": "Not bad! 📚",
+      "satisfactory": "Satisfactory 📖",
+      "needImprovement": "Need to review the material 💪"
+    },
+    "correct": "Correct",
+    "wrong": "Wrong",
+    "total": "Total",
+    "weakTopics": "Weak Points Analysis",
+    "weakTopicsHint": "AI has identified that you should pay more attention to the following topics:",
+    "recommendations": "Recommendations for improvement",
+    "recommendationsHint": "AI suggests the following steps to improve your results:",
+    "detailedAnswers": "Answer details:",
+    "correctAnswer": "Correct answer:",
+    "newQuiz": "New Quiz",
+    "askAI": "Ask AI",
+    "chatHint": "Ask AI about topics you don't understand in the \"Chat\" section"
+  },
+  "stats": {
+    "title": "My Statistics",
+    "subtitle": "Analysis of your learning progress",
+    "totalQuizzes": "Quizzes completed",
+    "averageScore": "Average score",
+    "questionsAnswered": "Questions answered",
+    "lastResult": "Last result",
+    "progress": "Progress",
+    "progressLast": "last {count} quizzes",
+    "weakTopics": "Topics requiring attention",
+    "history": "Quiz history",
+    "noQuizzes": "You haven't taken any quizzes yet",
+    "startQuiz": "Start quiz"
+  },
+  "errors": {
+    "loadingTopics": "Failed to load topics. Make sure the backend is running.",
+    "loadingQuestion": "Error loading question",
+    "submittingAnswer": "Error submitting answer",
+    "completingQuiz": "Error completing quiz",
+    "creatingQuiz": "Error creating quiz",
+    "enterTopic": "Enter a topic for the quiz",
+    "checkBackend": "Make sure the backend is running and materials are loaded.",
+    "tryAgain": "Try again"
+  }
+}

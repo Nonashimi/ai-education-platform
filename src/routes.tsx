@@ -1,22 +1,34 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Chat from "./modules/Chat";
-import QuizListPage from "./modules/Tests/components/quiz-list";
-import QuizInfoPage from "./modules/Tests/components/quiz-info";
-import QuizPage from "./modules/Tests/components/quiz";
 import QuizletFlashcardsApp from "./modules/Cards";
+
+// API-подключенные компоненты
+import QuizListApiPage from "./modules/Tests/components/quiz-list-api";
+import QuizApiPage from "./modules/Tests/components/quiz-api";
+import QuizStatsPage from "./modules/Tests/components/quiz-stats";
+import FlashcardsApiApp from "./modules/Cards/components/flashcards-api";
 
 
 const AppRoutes = () => {
   return (
       <Routes>
-        <Route path="/" element={<></>
-        } />
+        <Route path="/" element={<></>} />
+
+        {/* Chat с AI backend */}
         <Route path="/chat" element={<Chat />} />
-        <Route path="/quiz" element={<QuizListPage />} />
-        <Route path="/quiz/:id" element={<QuizInfoPage />} />
-        <Route path="/quiz/:id/start" element={<QuizPage/>} />
+
+        {/* Квизы с AI backend */}
+        <Route path="/quiz" element={<Navigate to="/quiz-api" replace />} />
+        <Route path="/quiz-api" element={<QuizListApiPage />} />
+        <Route path="/quiz-api/:quizId" element={<QuizApiPage />} />
+        <Route path="/quiz-stats" element={<QuizStatsPage />} />
+
         <Route path="/game" element={<></>} />
-        <Route path="/cards" element={<QuizletFlashcardsApp/>} />
+
+        {/* Карточки */}
+        <Route path="/cards" element={<Navigate to="/cards-api" replace />} />
+        <Route path="/cards-old" element={<QuizletFlashcardsApp/>} />
+        <Route path="/cards-api" element={<FlashcardsApiApp />} />
       </Routes>
   );
 };

@@ -1,0 +1,87 @@
+{
+  "pageTitle": "Выберите тему для квиза",
+  "pageSubtitle": "AI создаст для вас уникальный тест по выбранной теме",
+  "createCustomQuiz": "Создать свой квиз с AI",
+  "myStats": "Моя статистика",
+  "searchPlaceholder": "Поиск по темам...",
+  "difficulty": {
+    "easy": "Легко",
+    "medium": "Средне",
+    "hard": "Сложно"
+  },
+  "materialsLoaded": "материалов загружено",
+  "noTopicsFound": "Темы не найдены",
+  "loadMaterials": "Загрузите материалы через backend API",
+  "createDialog": {
+    "title": "Создать свой квиз с AI",
+    "topicLabel": "Тема квиза",
+    "topicPlaceholder": "Например: Python основы, Математика 10 класс...",
+    "topicHint": "AI создаст вопросы на основе загруженных материалов по этой теме",
+    "questionsCount": "Количество вопросов",
+    "difficultyLabel": "Сложность",
+    "generating": "AI генерирует квиз...",
+    "generatingHint": "Это может занять несколько секунд",
+    "cancel": "Отмена",
+    "create": "Создать квиз",
+    "creating": "Генерация..."
+  },
+  "quiz": {
+    "backToQuizzes": "Назад к квизам",
+    "question": "Вопрос",
+    "of": "/",
+    "answer": "Ответить",
+    "next": "Далее",
+    "finish": "Завершить",
+    "correct": "Правильно!",
+    "incorrect": "Неправильно",
+    "confirmLeave": "Квиз останется незавершенным. Вы уверены, что хотите выйти?"
+  },
+  "results": {
+    "completed": "Квиз завершен!",
+    "score": "Правильных ответов",
+    "scoreMessages": {
+      "excellent": "Превосходно! 🌟",
+      "great": "Отлично! 👏",
+      "good": "Хорошо! 👍",
+      "notBad": "Неплохо! 📚",
+      "satisfactory": "Удовлетворительно 📖",
+      "needImprovement": "Нужно повторить материал 💪"
+    },
+    "correct": "Правильно",
+    "wrong": "Неправильно",
+    "total": "Всего",
+    "weakTopics": "Анализ слабых мест",
+    "weakTopicsHint": "AI обнаружил, что вам стоит уделить больше внимания следующим темам:",
+    "recommendations": "Рекомендации для улучшения",
+    "recommendationsHint": "AI предлагает следующие шаги для повышения результатов:",
+    "detailedAnswers": "Детали ответов:",
+    "correctAnswer": "Правильный ответ:",
+    "newQuiz": "Новый квиз",
+    "askAI": "Спросить AI",
+    "chatHint": "Спросите AI о темах, которые вам не понятны, в разделе \"Чат\""
+  },
+  "stats": {
+    "title": "Моя статистика",
+    "subtitle": "Анализ вашего прогресса в обучении",
+    "totalQuizzes": "Пройдено квизов",
+    "averageScore": "Средний балл",
+    "questionsAnswered": "Вопросов отвечено",
+    "lastResult": "Последний результат",
+    "progress": "Прогресс",
+    "progressLast": "последние {count} квизов",
+    "weakTopics": "Темы, требующие внимания",
+    "history": "История квизов",
+    "noQuizzes": "Вы еще не проходили квизы",
+    "startQuiz": "Начать квиз"
+  },
+  "errors": {
+    "loadingTopics": "Не удалось загрузить темы. Убедитесь, что backend запущен.",
+    "loadingQuestion": "Ошибка при загрузке вопроса",
+    "submittingAnswer": "Ошибка при отправке ответа",
+    "completingQuiz": "Ошибка при завершении квиза",
+    "creatingQuiz": "Ошибка при создании квиза",
+    "enterTopic": "Введите тему для квиза",
+    "checkBackend": "Проверьте, что backend запущен и материалы загружены.",
+    "tryAgain": "Попробовать снова"
+  }
+}
